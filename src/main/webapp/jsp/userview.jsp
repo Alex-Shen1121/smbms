@@ -6,7 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@include file="/jsp/common/head.jsp"%>
+<%@include file="/jsp/common/head.jsp" %>
 <div class="right">
     <div class="location">
         <strong>你现在所在的位置是:</strong>
@@ -26,7 +26,7 @@
         <p><strong>用户地址：</strong><span>${user.address }</span></p>
         <p><strong>用户角色：</strong><span>${user.userRoleName}</span></p>
         <div class="providerAddBtn">
-            <input type="button" id="back" name="back" value="返回" >
+            <input type="button" id="back" name="back" value="返回">
         </div>
     </div>
 </div>
