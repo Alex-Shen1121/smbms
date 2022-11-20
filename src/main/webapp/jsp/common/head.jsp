@@ -12,8 +12,8 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title>超市订单管理系统</title>
-    <link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/statics/css/style.css" />
-    <link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/statics/css/public.css" />
+    <link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/statics/css/style.css"/>
+    <link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/statics/css/public.css"/>
 </head>
 <body>
 <!--头部-->
@@ -21,7 +21,7 @@
     <h1>超市订单管理系统</h1>
     <div class="publicHeaderR">
         <p><span>下午好！</span><span style="color: #fff21b">${userSession.userName}</span> , 欢迎你！</p>
-        <a href="${pageContext.request.contextPath }/logout.do">退出</a>
+        <a href="${pageContext.request.contextPath }/jsp/logout.do">退出</a>
     </div>
 </header>
 <!--时间-->
@@ -39,10 +39,9 @@
                 <li><a href="${pageContext.request.contextPath }/jsp/provider.do?method=query">供应商管理</a></li>
                 <li><a href="${pageContext.request.contextPath }/jsp/user.do?method=query">用户管理</a></li>
                 <li><a href="${pageContext.request.contextPath }/jsp/pwdmodify.jsp">密码修改</a></li>
-                <li><a href="${pageContext.request.contextPath }/logout.do">退出系统</a></li>
+                <li><a href="${pageContext.request.contextPath }/jsp/logout.do">退出系统</a></li>
             </ul>
         </nav>
     </div>
     <input type="hidden" id="path" name="path" value="${pageContext.request.contextPath }"/>
     <input type="hidden" id="referer" name="referer" value="<%=request.getHeader("Referer")%>"/>
-</section>
