@@ -2,6 +2,9 @@ package com.shency.service;
 
 import com.shency.pojo.User;
 
+import java.sql.Connection;
+import java.sql.SQLException;
+
 /**
  * @ClassName UserService
  * @Description TODO
@@ -10,4 +13,7 @@ import com.shency.pojo.User;
  */
 public interface UserService {
     public User login(String userCode, String password);
+
+    // 修改当前用户密码
+    public boolean updatePwd(int id, String password);
 }

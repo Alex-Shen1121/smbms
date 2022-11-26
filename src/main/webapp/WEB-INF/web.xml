@@ -46,5 +46,14 @@
         <servlet-name>LogoutServlet</servlet-name>
         <url-pattern>/jsp/logout.do</url-pattern>
     </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>UserServlet</servlet-name>
+        <servlet-class>com.shency.servlet.user.UserServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UserServlet</servlet-name>
+        <url-pattern>/jsp/user.do</url-pattern>
+    </servlet-mapping>
 </web-app>
 
