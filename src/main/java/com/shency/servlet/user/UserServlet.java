@@ -21,6 +21,18 @@ import java.io.IOException;
 public class UserServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        String method = req.getParameter("method");
+        if (method != null && method.equals("savepwd")) {
+            this.updatePwd(req, resp);
+        }
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        doGet(req, resp);
+    }
+
+    public void updatePwd(HttpServletRequest req, HttpServletResponse resp) {
         // 从session中获取id
         Object attribute = req.getSession().getAttribute(Constants.USER_SESSION);
         String newpassword = req.getParameter("newpassword");
@@ -41,11 +53,11 @@ public class UserServlet extends HttpServlet {
             req.setAttribute("message", "新密码有问题");
         }
 
-        req.getRequestDispatcher("pwdmodify.jsp").forward(req,resp);
-    }
+        try {
+            req.getRequestDispatcher("pwdmodify.jsp").forward(req, resp);
+        } catch (ServletException | IOException e) {
+            throw new RuntimeException(e);
+        }
 
-    @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        doGet(req, resp);
     }
 }
