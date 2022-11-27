@@ -18,4 +18,7 @@ public interface UserDao {
 
     // 修改当前用户密码
     public int updatePwd(Connection conn, int id, String password) throws SQLException;
+
+    // 查询用户总数
+    public int getUserCount(Connection conn, String userName, int userRole) throws SQLException;
 }

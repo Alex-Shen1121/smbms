@@ -16,4 +16,6 @@ public interface UserService {
 
     // 修改当前用户密码
     public boolean updatePwd(int id, String password);
+
+    public int getUserCount(String username,  int userrole);
 }
