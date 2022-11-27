@@ -4,6 +4,7 @@ import com.shency.pojo.User;
 
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.util.List;
 
 /**
  * @ClassName UserService
@@ -18,4 +19,7 @@ public interface UserService {
     public boolean updatePwd(int id, String password);
 
     public int getUserCount(String username,  int userrole);
+
+    public List<User> getUserList(String queryUserName, int queryUserRole, int currentPageNo, int pageSize);
+
 }

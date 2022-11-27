@@ -5,6 +5,7 @@ import com.shency.util.Constants;
 
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.util.List;
 
 /**
  * @ClassName UserDao
@@ -21,4 +22,7 @@ public interface UserDao {
 
     // 查询用户总数
     public int getUserCount(Connection conn, String userName, int userRole) throws SQLException;
+
+    public List<User> getUserList(Connection connection, String userName, int userRole, int currentPageNo, int pageSize)throws Exception;
+
 }

@@ -8,6 +8,7 @@ import org.junit.Test;
 
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.util.List;
 
 /**
  * @ClassName UserServiceImpl
@@ -78,10 +79,24 @@ public class UserServiceImpl implements UserService {
 
     }
 
-    @Test
-    public void testUserCount() {
-        UserService userService = new UserServiceImpl();
-        int userCount = userService.getUserCount(null, 0);
-        System.out.println("userCount = " + userCount);
+    @Override
+    public List<User> getUserList(String queryUserName, int queryUserRole, int currentPageNo, int pageSize) {
+        // TODO Auto-generated method stub
+        Connection connection = null;
+        List<User> userList = null;
+        System.out.println("queryUserName ---- > " + queryUserName);
+        System.out.println("queryUserRole ---- > " + queryUserRole);
+        System.out.println("currentPageNo ---- > " + currentPageNo);
+        System.out.println("pageSize ---- > " + pageSize);
+        try {
+            connection = BaseDao.getConnection();
+            userList = userDao.getUserList(connection, queryUserName,queryUserRole,currentPageNo,pageSize);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }finally{
+            BaseDao.closeResource(connection, null, null);
+        }
+        return userList;
     }
 }
